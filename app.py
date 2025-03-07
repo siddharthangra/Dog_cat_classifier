@@ -1,12 +1,15 @@
 from flask import Flask, request, jsonify, render_template
 from tensorflow import keras
-import tensorflow as tf
 import numpy as np
 import cv2
 import io
 import os
 
 model = keras.models.load_model("model.h5")
+
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
+import tensorflow as tf
+
 
 app = Flask(__name__)
 
