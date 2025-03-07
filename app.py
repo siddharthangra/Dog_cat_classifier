@@ -4,12 +4,9 @@ import numpy as np
 import cv2
 import io
 import os
-
-model = keras.models.load_model("model.h5")
-
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 import tensorflow as tf
-
+model = keras.models.load_model("model.h5")
 
 app = Flask(__name__)
 
